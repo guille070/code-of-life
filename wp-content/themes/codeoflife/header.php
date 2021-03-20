@@ -72,7 +72,6 @@
 				<ul class="links-menu">
 					<li class="icon app-store"><a href="https://itunes.apple.com/app/id1027529803" target="_blank">App Store</a></li>
 					<li class="icon code-wellness"><a href="http://code-wellness.com" target="_blank">Shop Code Wellness</a></li>
-					<!--li class="icon kod-wear"><a href="http://code-activewear.com" target="_blank">Shop Code Activewear</a></li-->
 					<li class="icon code-activewear"><a href="http://code-activewear.com" target="_blank">Shop Code Activewear</a></li>
 					<li class="icon facebook"><a href="https://www.facebook.com/pages/Code-Of-Life/628163810608282" target="_blank">Facebook</a></li>
 					<li class="icon instagram"><a href="http://instagram.com/code.of.life?modal=true" target="_blank">Instagram</a></li>

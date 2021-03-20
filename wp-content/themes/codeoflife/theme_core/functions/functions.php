@@ -13,14 +13,15 @@
 function theme_setup()
 {
 
+	// Localización de traducciones
+    load_theme_textdomain( THEME_TEXTDOMAIN, get_stylesheet_directory() . '/languages' );
+
     // Custom Navigation Walker
     //require_once get_stylesheet_directory() . '/theme_core/functions/class-wp-bootstrap-navwalker.php';
 
     // Menús
     register_nav_menus( array(
-        //'primary' => __( 'Primary Menu', THEME_TEXTDOMAIN ),
-        //'primary_top_right' => __( 'Primary Menu (top right)', THEME_TEXTDOMAIN ),
-        //'footer' => __( 'Footer Menu', THEME_TEXTDOMAIN )
+        //'primary' => __( 'Primary Menu', THEME_TEXTDOMAIN )
     ) );
 
     // Theme support
@@ -52,3 +53,48 @@ function theme_scripts_styles()
     wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/front/js/script.js', array('jquery'), THEME_STYLE_VERSION, true);
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts_styles' );
+
+
+/**
+* ACF JSON - Save
+*/
+add_filter('acf/settings/save_json', 'theme_acf_json_save_point');
+function theme_acf_json_save_point( $path ) {
+    
+    // update path
+    $path = get_stylesheet_directory() . '/acf-json';
+    
+    // return
+    return $path;
+    
+}
+
+/**
+* ACF JSON - Load
+*/
+add_filter('acf/settings/load_json', 'theme_acf_json_load_point');
+function theme_acf_json_load_point( $paths ) {
+    
+    // remove original path (optional)
+    unset($paths[0]);
+    
+    // append path
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    
+    // return
+    return $paths;
+    
+}
+
+/**
+* Add Mime Types
+*/
+function theme_custom_mime_types( $mimes ) {
+ 
+    // New allowed mime types.
+    $mimes['svg'] = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+     
+    return $mimes;
+}
+add_filter( 'upload_mimes', 'theme_custom_mime_types' );
