@@ -19,7 +19,7 @@
     <![endif]-->
 
 	<div id="wrapper">
-		<a class="skip-main" href="#main">Skip to main content</a>
+		<a class="skip-main" href="#main"><?php _e( 'Skip to main content', THEME_TEXTDOMAIN ) ?></a>
 
         <header>
 			<div class="menu-bar">
@@ -46,13 +46,6 @@
 								<span class="navLinkDivis"></span>
 							</a>
 						</li>
-						<!--li id="navLink4" class="navLink">
-							<a href="#circle" class="cf">
-								<span class="navLinkDivis"></span>
-								<span class="navInner"><span class="navInnerText">Circle of Life</span></span>
-								<span class="navLinkDivis"></span>
-							</a>
-						</li-->
 						<li id="navLink4" class="navLink">
 							<a href="#kod-wear" class="cf">
 								<span class="navLinkDivis"></span>
@@ -69,14 +62,14 @@
 						</li>
 					</ul>
 				</nav>
-				<ul class="links-menu">
-					<li class="icon app-store"><a href="https://itunes.apple.com/app/id1027529803" target="_blank">App Store</a></li>
-					<li class="icon code-wellness"><a href="http://code-wellness.com" target="_blank">Shop Code Wellness</a></li>
-					<li class="icon code-activewear"><a href="http://code-activewear.com" target="_blank">Shop Code Activewear</a></li>
-					<li class="icon facebook"><a href="https://www.facebook.com/pages/Code-Of-Life/628163810608282" target="_blank">Facebook</a></li>
-					<li class="icon instagram"><a href="http://instagram.com/code.of.life?modal=true" target="_blank">Instagram</a></li>
-					<li class="schedule"><a href="https://clients.mindbodyonline.com/classic/ws?studioid=168401&stype=-7&sView=day&sLoc=0" target="_blank" class="cf"><span class="navInner"><span class="navInnerText">Schedule</span></span></a></li>
-				</ul>
+                
+                <?php 
+                    wp_nav_menu( array(
+                        'container' => false,
+                        'menu_class' => 'links-menu',
+                        'theme_location' => 'social_menu'
+                    ) ); 
+                ?>
 			</div>
 			<div id="lander" class="container">
 				<div class="landerWrapper">

@@ -21,7 +21,7 @@ function theme_setup()
 
     // Menús
     register_nav_menus( array(
-        //'primary' => __( 'Primary Menu', THEME_TEXTDOMAIN )
+        'social_menu' => __( 'Social Menu', THEME_TEXTDOMAIN )
     ) );
 
     // Theme support
