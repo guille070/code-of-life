@@ -64,12 +64,18 @@ $(document).ready(function() {
 	} );
 	
 	var screenSize = screen.width; //(screen.width > screen.height) ? screen.width : screen.height;
-	var videoResolution = "480x270";
+	/*var videoResolution = "480x270";
 	if(screenSize >= 640) videoResolution = "640x360";
 	if(screenSize >= 800) videoResolution = "800x450";
-	if(screenSize >= 1024) videoResolution = "1024x576";
+	if(screenSize >= 1024) videoResolution = "1024x576";*/
 	
-	$('.videoWrapper video').get(0).src = ($('.videoWrapper video').get(0).canPlayType('video/mp4')) ? "video/code_of_life-" + videoResolution + ".mp4" : "video/code_of_life-" + videoResolution + ".webm";
+	//$('.videoWrapper video').get(0).src = ($('.videoWrapper video').get(0).canPlayType('video/mp4')) ? "video/code_of_life-" + videoResolution + ".mp4" : "video/code_of_life-" + videoResolution + ".webm";
+
+	if ($('.videoWrapper video').get(0).canPlayType('video/mp4')) {
+		$('.videoWrapper video').get(0).src = $('.videoWrapper video').find('source.mp4').attr('src');
+	} else {
+		$('.videoWrapper video').get(0).src = $('.videoWrapper video').find('source.webp').attr('src');
+	}
 	
 	initCommon();
 	

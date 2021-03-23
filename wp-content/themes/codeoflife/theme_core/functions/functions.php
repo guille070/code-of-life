@@ -30,7 +30,7 @@ function theme_setup()
     add_theme_support( 'responsive-embeds' );
 
 	// Tamaño de imagenes
-    //add_image_size('hero_image', 1440, 900, true);
+    add_image_size('section_image', 1400, 99999, false);
 
 	// Stylesheet to the visual editor.
     //add_editor_style('editor-style.css');

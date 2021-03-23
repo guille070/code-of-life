@@ -22,47 +22,41 @@
 		<a class="skip-main" href="#main"><?php _e( 'Skip to main content', THEME_TEXTDOMAIN ) ?></a>
 
         <header>
-			<div class="menu-bar">
-				<nav id="menu">
-					<ul>
-						<li id="navLink1" class="navLink">
-							<a href="#about" class="cf">
-								<span class="navLinkDivis"></span>
-								<span class="navInner"><span class="navInnerText">About</span></span>
-								<span class="navLinkDivis"></span>
-							</a>
-						</li>
-						<li id="navLink2" class="navLink">
-							<a href="#pilates-and-fitness" class="cf">
-								<span class="navLinkDivis"></span>
-								<span class="navInner"><span class="navInnerText">Pilates &amp; fitness</span></span>
-								<span class="navLinkDivis"></span>
-							</a>
-						</li>
-						<li id="navLink3" class="navLink">
-							<a href="#wellness" class="cf">
-								<span class="navLinkDivis"></span>
-								<span class="navInner"><span class="navInnerText">Code Wellness</span></span>
-								<span class="navLinkDivis"></span>
-							</a>
-						</li>
-						<li id="navLink4" class="navLink">
-							<a href="#kod-wear" class="cf">
-								<span class="navLinkDivis"></span>
-								<span class="navInner"><span class="navInnerText">Code Activewear</span></span>
-								<span class="navLinkDivis"></span>
-							</a>
-						</li>
-						<li id="navLink5" class="navLink">
-							<a href="#contact" class="cf">
-								<span class="navLinkDivis"></span>
-								<span class="navInner"><span class="navInnerText">Contact</span></span>
-								<span class="navLinkDivis"></span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-                
+            <div class="menu-bar">
+
+                <?php
+                $rep_content = 'main_content';
+
+                if (have_rows($rep_content)) { 
+
+                    $i=0;
+
+                    ?>
+                    
+                    <nav id="menu">
+                        <ul>
+
+                            <?php while ( have_rows($rep_content) ) : the_row();
+
+                                $section_name = get_sub_field('section_name');
+                                ?>
+
+                                <li id="navLink<?php echo $i; ?>" class="navLink">
+                                    <a href="#<?php echo str_replace(array("#", "'", ";", " ", "&"), '', strtolower($section_name)); ?>" class="cf">
+                                        <span class="navLinkDivis"></span>
+                                        <span class="navInner"><span class="navInnerText"><?php echo $section_name; ?></span></span>
+                                        <span class="navLinkDivis"></span>
+                                    </a>
+                                </li>
+
+                            <?php $i++;
+                            endwhile; ?>
+
+                        </ul>
+                    </nav>
+                                
+                <?php } ?>
+
                 <?php 
                     wp_nav_menu( array(
                         'container' => false,
@@ -70,14 +64,14 @@
                         'theme_location' => 'social_menu'
                     ) ); 
                 ?>
-			</div>
-			<div id="lander" class="container">
-				<div class="landerWrapper">
-					<div class="lander-logo">
-						<h1>Code of Life</h1>
-						<p><i>Lifestyle brand</i></p>
-					</div>
-				</div>
-			</div>
-		</header>
-		<main id="main">
+            </div>
+            <div id="lander" class="container">
+                <div class="landerWrapper">
+                    <div class="lander-logo">
+                        <h1>Code of Life</h1>
+                        <p><i>Lifestyle brand</i></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="main">
