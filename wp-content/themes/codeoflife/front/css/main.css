@@ -1,3 +1,5 @@
+@charset 'UTF-8';
+
 @font-face {
     font-family: 'MonoSpac821BT';
     src: url('../fonts/monospace821bt-webfont.eot');
@@ -1182,7 +1184,7 @@ nav .navLink.active .navLinkDivis {
 		right:22.0625em; /* 16*2 + 74 + 16*1.5 + 115 + 16*1.5 + 25 + 16*1.5 + 25 + 16*1.5 */
 	}
 	
-	./*links-menu li.icon a {
+	/*.links-menu li.icon a {
 		margin-left:1.5em;
 	}*/
 	
