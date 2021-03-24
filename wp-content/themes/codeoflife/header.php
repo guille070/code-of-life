@@ -19,7 +19,7 @@
     <![endif]-->
 
 	<div id="wrapper">
-		<a class="skip-main" href="#main"><?php _e( 'Skip to main content', THEME_TEXTDOMAIN ) ?></a>
+		<a class="skip-main" href="#main"><?php _e( 'Skip to main content', THEME_TEXTDOMAIN ); ?></a>
 
         <header>
             <div class="menu-bar">
@@ -69,7 +69,7 @@
                 <div class="landerWrapper">
                     <div class="lander-logo">
                         <h1>Code of Life</h1>
-                        <p><i>Lifestyle brand</i></p>
+                        <p><i><?php _e( 'Lifestyle brand', THEME_TEXTDOMAIN ); ?></i></p>
                     </div>
                 </div>
             </div>
