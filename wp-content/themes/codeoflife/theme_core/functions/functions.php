@@ -16,9 +16,6 @@ function theme_setup()
 	// Localización de traducciones
     load_theme_textdomain( THEME_TEXTDOMAIN, get_stylesheet_directory() . '/languages' );
 
-    // Custom Navigation Walker
-    //require_once get_stylesheet_directory() . '/theme_core/functions/class-wp-bootstrap-navwalker.php';
-
     // Menús
     register_nav_menus( array(
         'social_menu' => __( 'Social Menu', THEME_TEXTDOMAIN )
@@ -26,14 +23,10 @@ function theme_setup()
 
     // Theme support
     add_theme_support( 'post-thumbnails' );
-    //add_theme_support( 'editor-styles' );
     add_theme_support( 'responsive-embeds' );
 
 	// Tamaño de imagenes
     add_image_size('section_image', 1400, 99999, false);
-
-	// Stylesheet to the visual editor.
-    //add_editor_style('editor-style.css');
 
 }
 add_action( 'after_setup_theme', 'theme_setup' );
