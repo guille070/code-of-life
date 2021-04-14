@@ -148,6 +148,11 @@ header {
 	background-position:-131px -20px; /* -276px -42px */
 }
 
+.links-menu li.youtube a {
+	width: 38px;
+    background-position: -131px -131px;
+}
+
 /*----------------------------------------------- End HEADER */
 
 /* LANDER
