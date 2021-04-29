@@ -120,7 +120,7 @@ header {
 	background:url(../images/icons.png) no-repeat -133px -44px; /*-277px -92px;*/
 	background-size:246px auto; /* 512x273:72 */ 
 	text-indent:-9999px;
-	margin-left:1.5em;
+	margin-left:1.3em;
 }
 
 .links-menu li.code-wellness a {
@@ -151,6 +151,11 @@ header {
 .links-menu li.youtube a {
 	width: 38px;
     background-position: -131px -131px;
+}
+
+.links-menu li.pinterest a {
+	width: 20px;
+    background-position: -168px -131px;
 }
 
 /*----------------------------------------------- End HEADER */
